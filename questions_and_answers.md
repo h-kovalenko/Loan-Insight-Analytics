@@ -1,4 +1,4 @@
-## Question 1: High Approval Rates for DTIs >60%
+![image](https://github.com/h-kovalenko/Loan-Insight-Analytics/assets/159094273/7795a4bf-ba1e-461a-a374-35898c0d5a1a)## Question 1: High Approval Rates for DTIs >60%
 The analysis found that some banks had remarkably high approval rates for applicants with DTIs exceeding 60%. Despite  common practice, suggesting that high DTIs means financial risk, these approvals were unexpected. This finding warrants further investigation into the lending practices of these banks.
 
 ![alt text](graphs/Question1.png?raw=true)
@@ -99,6 +99,66 @@ Racial disparities in loan denial rates were evident in the dataset. While White
 
 ![alt text](graphs/Question2.png?raw=true)
 *Black people within the same income group have a higher denial rate when it comes to home purchases.* 
+
+```sql
+WITH cte AS (
+SELECT
+lei,
+CASE derived_race
+WHEN 'White' THEN 'White'
+WHEN 'Black or African American' THEN 'Black or African American'
+ELSE 'Other'
+END AS Race,
+CASE loan_purpose
+WHEN 1 THEN 'Home purchase'
+WHEN 2 THEN 'Home improvement'
+WHEN 31 THEN 'Refinancing'
+WHEN 32 THEN 'Cash-out refinancing'
+WHEN 4 THEN 'Other purpose'
+ELSE 'Other'
+END AS Purpose,
+COUNT(*) AS Count_of_denied
+FROM hkovalenko.Projectquery.2021_lar
+WHERE derived_race IN ('White', 'Black or African American') AND action_taken = 3
+GROUP BY lei, Race, Purpose
+)
+
+, total_num AS (
+SELECT
+lei,
+CASE derived_race
+WHEN 'White' THEN 'White'
+WHEN 'Black or African American' THEN 'Black or African American'
+ELSE 'Other'
+END AS Race,
+CASE loan_purpose
+WHEN 1 THEN 'Home purchase'
+WHEN 2 THEN 'Home improvement'
+WHEN 31 THEN 'Refinancing'
+WHEN 32 THEN 'Cash-out refinancing'
+WHEN 4 THEN 'Other purpose'
+ELSE 'Other'
+END AS Purpose,
+COUNT(*) AS total_count
+FROM hkovalenko.Projectquery.2021_lar
+WHERE derived_race IN ('White', 'Black or African American')
+GROUP BY lei, Race, Purpose
+)
+
+SELECT
+cte.lei,
+cte.Race,
+cte.Purpose,
+cte.Count_of_denied,
+total_num.total_count,
+cte.Count_of_denied/total_num.total_count as percent_denied
+
+FROM cte
+JOIN total_num
+ON cte.lei = total_num.lei AND cte.Race = total_num.Race AND cte.Purpose = total_num.Purpose
+WHERE total_num.total_count > 50
+```
+
 
 
 ## Question 3: Racial Disparities at Different Banks
