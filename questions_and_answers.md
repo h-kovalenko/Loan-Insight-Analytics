@@ -1,4 +1,4 @@
-![image](https://github.com/h-kovalenko/Loan-Insight-Analytics/assets/159094273/c5d08d70-5788-46b7-bd84-ed576c8e5368)![image](https://github.com/h-kovalenko/Loan-Insight-Analytics/assets/159094273/e936332b-de2c-4b31-9558-62fa4af1f041)![image](https://github.com/h-kovalenko/Loan-Insight-Analytics/assets/159094273/cb9c9e8d-d9f8-4bc4-944b-9cdf32c6597e)![image](https://github.com/h-kovalenko/Loan-Insight-Analytics/assets/159094273/7795a4bf-ba1e-461a-a374-35898c0d5a1a)## Question 1: High Approval Rates for DTIs >60%
+## Question 1: High Approval Rates for DTIs >60%
 The analysis found that some banks had remarkably high approval rates for applicants with DTIs exceeding 60%. Despite  common practice, suggesting that high DTIs means financial risk, these approvals were unexpected. This finding warrants further investigation into the lending practices of these banks.
 
 ![alt text](graphs/Question1.png?raw=true)
