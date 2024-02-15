@@ -5,7 +5,7 @@ The analysis found that some banks had remarkably high approval rates for applic
 
 *First Bank and Mortgage Research Center have a significantly high loan approval rate for applicants with Debt-to-Income Ratios >60%, far exceeding the 16% baseline rate.*
 
- ```
+````sql
 
 WITH RacePurposeCounts AS (
 SELECT
@@ -91,7 +91,7 @@ FROM RacePurposeCounts cte
 JOIN TotalCounts total_num
 ON cte.Race = total_num.Race AND cte.Purpose = total_num.Purpose AND cte.IncomeGroup = total_num.IncomeGroup
 WHERE total_num.total_count > 50 AND cte.Purpose = 'Home purchase'
-```
+````
 
 
 ## Question 2: Racial Disparities in Loan Denial Rates
