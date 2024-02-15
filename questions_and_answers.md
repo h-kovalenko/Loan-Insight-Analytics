@@ -23,6 +23,7 @@ The analysis further revealed differences in denial rates among various banks, w
 At the state level, the analysis categorized states based on their political leanings. The findings showed that in red states, mortgage denial rates for Black or African American applicants were 1.5% higher compared to blue states. This information sheds light on the impact of political leanings on racial disparities in mortgage lending.
 
 ![alt text](graphs/Question4.png?raw=true)
+
 *Purpose: Home purchase*
 *Income:100K-150K*
 
