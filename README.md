@@ -6,9 +6,7 @@ The LoanInsight 2021 project focuses on analyzing the **Loan Level Dataset** for
 ## Data
 The Loan Level Dataset for 2021 comprises 2.6 million rows and 89 columns, offering a holistic view of factors influencing loan approval decisions. Key variables include applicant demographics, loan terms, property details, and financial information. Notable numeric statistics include an average loan amount of $304,753.97 and an average interest rate of 3.08%.
 
-The dataset can be retrieved from the [link](https://ffiec.cfpb.gov/data-publication/dynamic-national-loan-level-dataset/2021)https://ffiec.cfpb.gov/data-publication/dynamic-national-loan-level-dataset/2021
-
-
+The dataset can be retrieved from the [link](https://ffiec.cfpb.gov/data-publication/dynamic-national-loan-level-dataset/2021)
 ## Analysis and Results
 The analysis involved data cleaning using Google Cloud Tools like **DataPrep** and exploration through **BigQuery** and **Looker**. Key insights include:
 
